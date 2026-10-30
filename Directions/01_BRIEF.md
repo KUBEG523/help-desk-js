@@ -6,8 +6,8 @@ Zbudujecie Helpdesk w pamięci przeglądarki.
 
 ### Funkcjonalności: 
 
-- dodawanie tytułu i priorytetu dla zgłoszenia <- do uzgodnienia
--  lista zgłoszeń
+- dodawanie tytułu i priorytetu dla zgłoszenia
+- lista zgłoszeń
 - zmiana statusu po ID
 - filtr all/new/doing/done
 - licznik widoczne/wszystkie

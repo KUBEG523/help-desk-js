@@ -5,6 +5,7 @@ KUBEG:
 * CSS
 * Filtorwanie
 * Counters
+* walidacja formularza i error handlere
 
 SZCZERBA:
 * Obiekty/kolekcja zgloszen
@@ -34,3 +35,16 @@ app/JS/SZCZERBA
 MATIUS
 app/import/MATIUS
 app/test/MATIUS
+
+Struktury danych/Plików
+
+struktura zgloszen:
+id : numer
+tytul : string
+opis : string 
+status : string
+priorytet : string 
+
+Struktura zgloszenia:
+
+<li> <div> id: (id z js) | tutuł : | krótki opis : | status (droplist) | priority (droplist) | usun (button) </div> </li>
