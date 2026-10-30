@@ -20,3 +20,17 @@ ZAKAZ SPAMOWANIA IF-AMI i CASE-AMI
 Modularna budowa plików
 
 !!! import/export w osobnym pliku JS !!!
+
+Brache:
+
+KUBEG:
+app/HTML/KUBEG
+app/JS/KUBEG
+
+Szczerbartek:
+app/JS/SZCZERBA
+(inne nazwyac podobnie tylko zmieniac app/(zmiana)/SZCZERBA)
+
+MATIUS
+app/import/MATIUS
+app/test/MATIUS
