@@ -1,11 +1,11 @@
 Zadania dla grupy:
 
 KUBEG:
-* Szkielet HTML
-* CSS
+* Szkielet HTML (done v2 (30.10.26))
+* CSS (done v1 (30.10.26))
 * Filtorwanie
-* Counters
-* walidacja formularza i error handlere
+* Counters (HTML done v1 (30.10.26), JS not)
+* walidacja formularza (HTML done v1 (30.10.26), JS not) i error handlere
 
 SZCZERBA:
 * Obiekty/kolekcja zgloszen
@@ -25,7 +25,7 @@ Modularna budowa plików
 Brache:
 
 KUBEG:
-app/HTML/KUBEG
+app/HTML/KUBEG (active)
 app/JS/KUBEG
 
 Szczerbartek:
