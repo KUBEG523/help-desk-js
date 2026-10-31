@@ -1,0 +1,338 @@
+:root {
+  --background: #e5dbeb;
+  --secondary-background: #c4a6c9;
+
+  --main-font: #1c1a1c;
+  --secondary-font: #443648;
+
+  --button-font: #e0c9e6;
+  --button-background: #73197d;
+  --button-hover: #a726b5;
+
+  --active-font: #5866df;
+
+  --main-color: #73197d;
+  --secondary-color: #e291eb;
+
+  --line: #85179b;
+  --radius: 12px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1,
+h2 {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  background-color: var(--background);
+  color: var(--main-font);
+  font-family: "Segoe UI", system-ui, sans-serif;
+  line-height: 1.5;
+}
+
+.title-header,
+.section-zgloszenia,
+.section-formularz {
+  box-shadow:
+    0 8px 24px rgb(50 20 60 / 10%),
+    0 2px 6px rgb(50 20 60 / 5%);
+}
+
+.title-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: min(1500px, calc(100% - 48px));
+  min-height: 128px;
+  margin: 20px auto;
+  padding: 24px 20px;
+
+  background: var(--secondary-background);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: 0 8px 24px rgb(50 20 60 / 12%);
+
+  text-align: center;
+}
+
+.title-header h1 {
+  font-size: 2.3rem;
+  line-height: 1.2;
+  letter-spacing: 0.03em;
+}
+
+h2 {
+  font-size: 1.65rem;
+  line-height: 1.3;
+}
+
+main {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  gap: 24px;
+  width: min(1500px, calc(100% - 48px));
+  margin: 32px auto;
+}
+
+.section-zgloszenia,
+.section-formularz {
+  min-width: 0;
+  overflow: hidden;
+  background: var(--secondary-background);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: 0 6px 20px rgb(35 39 65 / 6%);
+}
+
+/* Naglowek zgloszen */
+.header-zgloszenia {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  min-height: 128px;
+  border-bottom: 1px solid var(--line);
+}
+
+.header-zgloszenia > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+}
+
+.header-zgloszenia > div + div {
+  border-left: 1px solid var(--line);
+}
+
+.title-zgloszenia {
+  align-items: center;
+  text-align: center;
+}
+
+.active_ctr-zgloszenia,
+.all_ctr-zgloszenia {
+  gap: 8px;
+  color: var(--secondary-font);
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.active_ctr-zgloszenia span,
+.all_ctr-zgloszenia span {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.all_ctr-zgloszenia span {
+  color: var(--main-font);
+}
+
+.active_ctr-zgloszenia span {
+  color: var(--active-font);
+}
+
+.section-formularz > header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 128px;
+  padding: 20px 24px;
+
+  border-bottom: 1px solid var(--line);
+  text-align: center;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: var(--main-font);
+}
+
+label {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+input[type="text"],
+select,
+textarea {
+  min-width: 0;
+  max-width: 100%;
+  padding: 10px 12px;
+
+  background: var(--background);
+  color: var(--main-font);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  accent-color: var(--main-color);
+}
+
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--main-color);
+  outline-offset: 3px;
+}
+
+button {
+  min-height: 44px;
+  padding: 10px 18px;
+
+  background: var(--button-background);
+  color: var(--button-font);
+  border: 1px solid transparent;
+  border-radius: 8px;
+
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 3px 8px rgb(50 20 60 / 14%);
+}
+
+button:hover:not(:disabled) {
+  background: var(--button-hover);
+}
+
+button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.tools-zgloszenia {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  border-bottom: 1px solid var(--line);
+}
+
+.imports-zgloszenia {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: stretch;
+  gap: 0;
+
+  min-width: 0;
+  padding: 16px;
+}
+
+.imports-zgloszenia > div {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.JSON-zgloszenia {
+  padding-right: 12px;
+}
+
+.HTTP-zgloszenia {
+  padding-left: 12px;
+  border-left: 1px solid var(--line);
+}
+
+.imports-zgloszenia p {
+  flex-basis: 100%;
+  margin: 0 0 4px;
+
+  color: var(--secondary-font);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.imports-zgloszenia button {
+  flex: 1 1 90px;
+  min-height: 40px;
+  padding: 8px 10px;
+
+  background: var(--background);
+  color: var(--main-color);
+  border-color: var(--line);
+
+  font-size: 0.8rem;
+}
+
+.imports-zgloszenia button:hover:not(:disabled) {
+  background: var(--button-background);
+  color: var(--button-font);
+}
+
+.filter-zgloszenia {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-content: center;
+  align-items: end;
+  gap: 12px;
+
+  min-width: 0;
+  margin: 0;
+  padding: 16px;
+
+  border-left: 1px solid var(--line);
+}
+
+.filter-pole {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.filter-zgloszenia label {
+  color: var(--secondary-font);
+  font-size: 0.85rem;
+}
+
+.filter-zgloszenia select {
+  width: 100%;
+}
+
+.filter-zgloszenia button {
+  grid-column: 1 / -1;
+  width: 100%;
+  min-height: 40px;
+}
+
+.list-zgloszenia {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+
+  min-height: 320px;
+  margin: 0;
+  padding: 24px;
+
+  list-style: none;
+}
+
+.form-zgloszenia-JS {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 10px;
+  padding: 24px;
+}
+
+.form-zgloszenia-JS button[type="submit"] {
+  margin-top: 14px;
+}

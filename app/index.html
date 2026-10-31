@@ -1,14 +1,126 @@
 <!doctype html>
-<html lang="en">
+<html lang="pl">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Help Desk</title>
-    <link rel="icon" type="image/x-icon" href="" />
+
+    <!--Link and script-->
     <link rel="stylesheet" href="styles.css" />
     <script src="static.js" defer></script>
     <script src="main.js" defer></script>
     <script src="import.js" defer></script>
   </head>
-  <body></body>
+  <body>
+    <header class="title-header">
+      <h1>HELP-DESK RKZ PROJECT</h1>
+    </header>
+
+    <main>
+      <section class="section-zgloszenia">
+        <header>
+          <div class="header-zgloszenia">
+            <div class="title-zgloszenia">
+              <h2>Zgłoszenia</h2>
+            </div>
+
+            <div class="active_ctr-zgloszenia">
+              Aktywne zgłoszenia:
+              <span id="active_ctr-zgloszenia-js">0</span>
+            </div>
+
+            <div class="all_ctr-zgloszenia">
+              Wszystkie zgłoszenia:
+              <span id="all_ctr-zgloszenia-js">0</span>
+            </div>
+          </div>
+        </header>
+
+        <div class="tools-zgloszenia">
+          <div class="imports-zgloszenia">
+            <div class="JSON-zgloszenia">
+              <p>Import/Export JSON</p>
+
+              <button type="button" id="import_btn-JS">Import JSON</button>
+
+              <button type="button" id="export_btn-JS">Export JSON</button>
+            </div>
+
+            <div class="HTTP-zgloszenia">
+              <p>Import/Export HTTP</p>
+
+              <button type="button" id="import_btn-HTTP">Import HTTP</button>
+
+              <button type="button" id="export_btn-HTTP">Export HTTP</button>
+            </div>
+          </div>
+
+          <form id="filter-zgloszenia" class="filter-zgloszenia">
+            <div class="filter-pole">
+              <label for="filter-status">Status</label>
+
+              <select name="filter-status" id="filter-status">
+                <option value="all">Wszystkie</option>
+                <option value="new">Nowe</option>
+                <option value="doing">W trakcie</option>
+                <option value="done">Zrobione</option>
+              </select>
+            </div>
+
+            <div class="filter-pole">
+              <label for="filter-priority">Priorytet</label>
+
+              <select name="filter-priority" id="filter-priority">
+                <option value="all">Wszystkie</option>
+                <option value="low">Niski</option>
+                <option value="medium">Średni</option>
+                <option value="high">Wysoki</option>
+              </select>
+            </div>
+
+            <button type="submit" id="filter-submit_btn">Filtruj</button>
+          </form>
+        </div>
+
+        <ul class="list-zgloszenia" id="list-zgloszenia"></ul>
+      </section>
+
+      <section class="section-formularz">
+        <header>
+          <h2>Dodawanie zgłoszenia</h2>
+        </header>
+
+        <form class="form-zgloszenia-JS" id="form-zgloszenia-JS">
+          <label for="form-title">Tytuł</label>
+          <input
+            type="text"
+            name="form-title"
+            id="form-title"
+            minlength="10"
+            maxlength="100"
+            required
+          />
+
+          <label for="form-description">Krótki opis</label>
+          <textarea
+            name="form-description"
+            id="form-description"
+            maxlength="255"
+            rows="3"
+          ></textarea>
+
+          <label for="form-priority">Priorytet zgłoszenia</label>
+          <select name="form-priority" id="form-priority">
+            <option value="low">Niski</option>
+            <option value="medium">Średni</option>
+            <option value="high">Wysoki</option>
+          </select>
+
+          <button name="form-submit_btn" id="form-submit_btn">
+            Dodaj zgłoszenie
+          </button>
+        </form>
+      </section>
+    </main>
+  </body>
 </html>
