@@ -53,7 +53,8 @@ document.getElementById("form-zgloszenia-JS").addEventListener("submit", functio
     zgloszenia.push(zgloszenie);
 
     const noweZgloszenie = document.createElement('li');
-    noweZgloszenie.textContent = zgloszenie.id + ". " + zgloszenie.tytul + ": " + zgloszenie.opis + " | " + zgloszenie.priorytet + " ";
+    noweZgloszenie.textContent = zgloszenie.id +". Tytuł: " + zgloszenie.tytul + ". Opis: " + zgloszenie.opis + " | Priorytet: " + zgloszenie.priorytet + " ";
+   noweZgloszenie.classList.add("list-element-li");
 
     const status = document.createElement ("select");
     status.addEventListener('change', zmianaStatusu)

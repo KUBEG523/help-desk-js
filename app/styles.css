@@ -335,8 +335,34 @@ button:disabled {
 
 .form-zgloszenia-JS button[type="submit"] {
   margin-top: 14px;
-<<<<<<< HEAD
 }
-=======
+
+.list-element-li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    font-size: 1.2em;
+    font-weight: 600;
+
+    padding: 16px;
+    border: 2px solid var(--line);
+    border-radius: 8px;
+
+    background-color: var(--background);
+    color: var(--main-font);
 }
->>>>>>> origin/app/JS/SZCZERBA
+
+.list-element-li select 
+{
+    margin-left: auto;
+min-width: auto;
+}
+
+.list-element-li
+{
+ border: 2px solid var(--linia);
+ border-radius: 8px;
+
+
+}
