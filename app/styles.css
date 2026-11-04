@@ -318,11 +318,9 @@ button:disabled {
   display: flex;
   flex-direction: column;
   gap: 14px;
-
   min-height: 320px;
   margin: 0;
   padding: 24px;
-
   list-style: none;
 }
 
@@ -338,31 +336,23 @@ button:disabled {
 }
 
 .list-element-li {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-
-    font-size: 1.2em;
-    font-weight: 600;
-
-    padding: 16px;
-    border: 2px solid var(--line);
-    border-radius: 8px;
-
-    background-color: var(--background);
-    color: var(--main-font);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.2em;
+  font-weight: 600;
+  padding: 16px;
+  border: 2px solid var(--line);
+  border-radius: 8px;
+  background-color: var(--background);
+  color: var(--main-font);
 }
 
-.list-element-li select 
-{
-    margin-left: auto;
-min-width: auto;
+.list-element-li select {
+  margin-left: auto;
+  min-width: auto;
 }
-
-.list-element-li
-{
- border: 2px solid var(--linia);
- border-radius: 8px;
-
-
+.list-element-li {
+  flex-wrap: wrap;
+  overflow-wrap: anywhere;
 }
