@@ -2,6 +2,7 @@ const lista = document.getElementById("list-zgloszenia");
 
 let zgloszenia = [];
 let tablicaID = 1;
+let aktywneLiczba = 0;
 
 // obiektówka do utworzenia droplisty Status
 let statusOpcje = [
@@ -15,6 +16,7 @@ function liczbaZgloszen()
 {
     let liczba = document.querySelectorAll("#list-zgloszenia li").length;
     document.getElementById("all_ctr-zgloszenia-js").textContent = liczba;
+    document.getElementById("active_ctr-zgloszenia-js").textContent = aktywneLiczba;
 
     if(liczba == 0)
     {
@@ -28,7 +30,11 @@ function usunZgloszenie(event)
 {
     const element = event.currentTarget.closest('li');
     if(element)
+    {
+        let index = zgloszenia.indexOf(element) - 1;
+        zgloszenia.splice(index, 1);
         element.remove();
+    }
 
     liczbaZgloszen();
 }
@@ -36,6 +42,16 @@ function usunZgloszenie(event)
 function zmianaStatusu(event)
 {
     zgloszenia.status = event.target.value;
+    if(event.target.value == "new" || event.target.value == "doing")
+    {
+        aktywneLiczba = document.querySelectorAll("#list-zgloszenia li").length;
+    }
+    else
+    {
+        aktywneLiczba = document.querySelectorAll("#list-zgloszenia li").length - 1;
+    }
+    liczbaZgloszen();
+    return aktywneLiczba;
 }
 // dodawanie zgłoszenia
 document.getElementById("form-zgloszenia-JS").addEventListener("submit", function(event)
@@ -50,13 +66,12 @@ document.getElementById("form-zgloszenia-JS").addEventListener("submit", functio
         status: "new"
     };
 
-    zgloszenia.push(zgloszenie);
-
     const noweZgloszenie = document.createElement('li');
     noweZgloszenie.textContent = zgloszenie.id +". Tytuł: " + zgloszenie.tytul + ". Opis: " + zgloszenie.opis + " | Priorytet: " + zgloszenie.priorytet + " ";
    noweZgloszenie.classList.add("list-element-li");
 
     const status = document.createElement ("select");
+    status.id = "selectStatus"
     status.addEventListener('change', zmianaStatusu)
     statusOpcje.forEach(opcja => {
         const opcje = document.createElement("option");
@@ -75,8 +90,8 @@ document.getElementById("form-zgloszenia-JS").addEventListener("submit", functio
     noweZgloszenie.appendChild(btnDelete);
     lista.appendChild(noweZgloszenie); 
 
-    zgloszenie.id++;
-
+    tablicaID++;
+    zgloszenia.push(zgloszenie);
     liczbaZgloszen();
     document.getElementById("form-title").value = '';
     document.getElementById("form-description").value = '';
