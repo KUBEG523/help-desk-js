@@ -88,7 +88,7 @@ document.getElementById("form-zgloszenia-JS").addEventListener("submit", functio
     };
 
     // warunek czy sa takie same tytuly i czy tablica nie przekroczyla rozmiaru
-if (!zgloszenia.some((istniejaceZgloszenie) => document.getElementById("form-title").value === istniejaceZgloszenie.tytul) || zgloszenia.length() <= 999) 
+if (!zgloszenia.some((istniejaceZgloszenie) => document.getElementById("form-title").value === istniejaceZgloszenie.tytul)) 
   {
     //---------------------------
     const noweZgloszenie = document.createElement("li");
