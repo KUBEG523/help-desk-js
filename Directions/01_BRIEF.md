@@ -6,18 +6,18 @@ Zbudujecie Helpdesk w pamięci przeglądarki.
 
 ### Funkcjonalności: 
 
-- dodawanie tytułu i priorytetu dla zgłoszenia
-- lista zgłoszeń
-- zmiana statusu po ID
-- filtr all/new/doing/done
-- licznik widoczne/wszystkie
-- komunikat pustego wyniku. (zakladam ze pusty formularz)
+- dodawanie tytułu i priorytetu dla zgłoszenia +
+- lista zgłoszeń + 
+- zmiana statusu po ID + 
+- filtr all/new/doing/done +
+- licznik widoczne/wszystkie +
+- komunikat pustego wyniku. (zakladam ze pusty formularz) +
 
 ### Wymagania:
 
-- formularz (dodawanie nowego zgłoszenia) działa przez pociśnięcie klawisza [Enter] <-- chrzanic enter
-- elementy mają etykiety
-- odświeżenie resetuje dane <- ale i tak bedzie przygotwane pod v2
+- formularz (dodawanie nowego zgłoszenia) działa przez pociśnięcie klawisza [Enter] +
+- elementy mają etykiety +
+- odświeżenie resetuje dane <- ale i tak bedzie przygotwane pod v2 +
 
 Praca w zespołach dwu lub trzyosobowych. 
 
@@ -25,13 +25,13 @@ Wspólne repozytorium na GitHub ("osiołek" zakłada, dodaje współpracowników
 
 ### Kontrakt danych: 
 
-- **id:** niepusty napis, do 100 znaków i unikatowy <-- bedzie liczba inkremanacyjna
-- **title:** trim i 3–80 znaków
-- **status:** new/doing/done
-- **priority:** low/normal/high
-- nowy wpis ma status new
-- maksymalnie 1000 rekordów
-- zmiana statusu także done -> new
+- **id:** niepusty napis, do 100 znaków i unikatowy <-- bedzie liczba inkremanacyjna +
+- **title:** trim i 3–80 znaków +
+- **status:** new/doing/done +
+- **priority:** low/normal/high + 
+- nowy wpis ma status new + 
+- maksymalnie 1000 rekordów + 
+- zmiana statusu także done -> new +
 
 ### Sprawdzanie/testy: 
 

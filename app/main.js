@@ -26,8 +26,7 @@ function liczbaZgloszen() {
   });
 
   document.getElementById("all_ctr-zgloszenia-js").textContent = liczba;
-  document.getElementById("active_ctr-zgloszenia-js").textContent =
-    aktywneLiczba;
+  document.getElementById("active_ctr-zgloszenia-js").textContent = aktywneLiczba;
 
   const pustalista = document.getElementById("pusta-lista");
   if (pustalista) {
@@ -40,8 +39,7 @@ function liczbaZgloszen() {
     tekst.textContent = "Pusta lista";
     lista.appendChild(tekst);
   }
-
-  // Po zmianie zgłoszeń odświeżamy również filtrowanie.
+  
   filtrujZgloszenia();
 }
 
@@ -53,7 +51,8 @@ function usunZgloszenie(event) {
       (zgloszenie) => zgloszenie.id == Number(element.dataset.id),
     );
 
-    if (index != -1) {
+    if (index != -1) 
+      {
       zgloszenia.splice(index, 1);
     }
 
@@ -63,7 +62,8 @@ function usunZgloszenie(event) {
   liczbaZgloszen();
 }
 
-function zmianaStatusu(event) {
+function zmianaStatusu(event) 
+{
   const element = event.target.closest("li");
 
   zgloszenia.forEach((zgloszenie) => {
@@ -77,9 +77,7 @@ function zmianaStatusu(event) {
 }
 
 // dodawanie zgłoszenia
-document
-  .getElementById("form-zgloszenia-JS")
-  .addEventListener("submit", function (event) {
+document.getElementById("form-zgloszenia-JS").addEventListener("submit", function (event) {
     event.preventDefault();
     let zgloszenie = {
       id: tablicaID,
@@ -89,12 +87,14 @@ document
       status: "new",
     };
 
+    // warunek czy sa takie same tytuly i czy tablica nie przekroczyla rozmiaru
+if (!zgloszenia.some((istniejaceZgloszenie) => document.getElementById("form-title").value === istniejaceZgloszenie.tytul) || zgloszenia.length() <= 999) 
+  {
+    //---------------------------
     const noweZgloszenie = document.createElement("li");
-    noweZgloszenie.id = "zgloszenie-" + zgloszenie.id;
-    noweZgloszenie.dataset.id = zgloszenie.id;
+noweZgloszenie.dataset.id = zgloszenie.id;
     noweZgloszenie.textContent =
-      zgloszenie.id +
-      ". Tytuł: " +
+      "Tytuł: " +
       zgloszenie.tytul +
       ". Opis: " +
       zgloszenie.opis +
@@ -102,9 +102,9 @@ document
       zgloszenie.priorytet +
       " ";
     noweZgloszenie.classList.add("list-element-li");
+    //-----------------
 
     const status = document.createElement("select");
-    status.id = "selectStatus-" + zgloszenie.id;
     status.setAttribute("aria-label", "Status zgłoszenia " + zgloszenie.id);
     status.addEventListener("change", zmianaStatusu);
     statusOpcje.forEach((opcja) => {
@@ -129,18 +129,26 @@ document
     liczbaZgloszen();
     document.getElementById("form-title").value = "";
     document.getElementById("form-description").value = "";
+}
+else
+{
+    alert("nie moga byc dwa takie same zgłoszenia")
+    return;
+}
   });
 
+
+// filtorwanie 
 function filtrujZgloszenia() {
   let widoczne = 0;
 
-  const komunikat = document.getElementById("brak-wynikow");
-  if (komunikat) {
-    komunikat.remove();
+  const komunikatbrakfiltru = document.getElementById("brak-wynikow");
+  if (komunikatbrakfiltru) {
+    komunikatbrakfiltru.remove();
   }
 
   zgloszenia.forEach((zgloszenie) => {
-    const element = document.getElementById("zgloszenie-" + zgloszenie.id);
+   const element = lista.querySelector(`li[data-id="${zgloszenie.id}"]`);
 
     const filtrstatus =
       statusFiltra == "all" || zgloszenie.status == statusFiltra;
